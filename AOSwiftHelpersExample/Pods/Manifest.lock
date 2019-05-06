@@ -1,0 +1,16 @@
+PODS:
+  - AOSwiftHelpers (0.0.2)
+
+DEPENDENCIES:
+  - AOSwiftHelpers (from `../AOSwiftHelpers/`)
+
+EXTERNAL SOURCES:
+  AOSwiftHelpers:
+    :path: "../AOSwiftHelpers/"
+
+SPEC CHECKSUMS:
+  AOSwiftHelpers: 9c638c402a2ccd3d156f13aaf57d009fb3cbaeaa
+
+PODFILE CHECKSUM: db143155b8475251030619f3a66903d37a13fc95
+
+COCOAPODS: 1.6.1

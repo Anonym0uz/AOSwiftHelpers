@@ -1,0 +1,6 @@
+framework module AOSwiftHelpers {
+  umbrella header "AOSwiftHelpers-umbrella.h"
+
+  export *
+  module * { export * }
+}
