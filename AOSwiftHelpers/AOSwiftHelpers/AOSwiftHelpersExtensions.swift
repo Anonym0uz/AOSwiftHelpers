@@ -115,4 +115,17 @@ public extension UIView {
     func setupConstraints() {
         
     }
+    
+    /**
+     Add subviews one-line code
+     
+     - Parameter views: Views in array
+     - Example
+     ```
+        view.addSubviews(views: [testView1, testView2, testView3])
+     ```
+     */
+    func addSubviews(views: [Any]) {
+        views.forEach { self.addSubview($0 as! UIView) }
+    }
 }

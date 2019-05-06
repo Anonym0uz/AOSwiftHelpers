@@ -55,7 +55,21 @@ open class AOSwiftUI: NSObject {
         
         return UIColor(red: red, green: green, blue: blue, alpha: alpha)
     }
-    
+}
+
+// MARK: - Work with view
+extension AOSwiftUI {
+    /**
+     Create simple view
+     - parameters:
+        - backgroundColor: Set view background color - UIColor
+        - rounded: Enable clipToBounds for view - Bool
+        - cornerRadius: Set corner radius (rounded parameter should be true) - CGFloat
+        - border: Enable/disable border - Bool
+        - borderWidth: Set border width (border parameter should be true) - CGFloat
+        - borderColor: Set border color (border parameter should be true) - UIColor
+        - parentView: Set parent view - UIView
+     */
     public func setupView(backgroundColor: UIColor, rounded: Bool = false, cornerRadius: CGFloat = 0, border: Bool = false, borderWidth: CGFloat = 0, borderColor: UIColor = UIColor.black, parentView: UIView!) -> UIView {
         let view = UIView()
         view.backgroundColor = backgroundColor
@@ -70,4 +84,8 @@ open class AOSwiftUI: NSObject {
         parentView.addSubview(view)
         return view
     }
+}
+// MARK: - Work with button
+extension AOSwiftUI {
+    
 }
