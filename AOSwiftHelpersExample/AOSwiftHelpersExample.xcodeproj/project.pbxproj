@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		A6C5C928ACC2F0D07EBA166B /* Pods_AOSwiftHelpersExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B670B63DBB78FF7A8FFEBFD /* Pods_AOSwiftHelpersExample.framework */; };
+		B919E5862286C6E00056304D /* ViewsExampleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B919E5852286C6E00056304D /* ViewsExampleController.swift */; };
+		B97356DB228625220070D292 /* ViewControllerTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97356DA228625220070D292 /* ViewControllerTableCell.swift */; };
 		B984B34A2280B6F8004035F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B984B3492280B6F8004035F0 /* AppDelegate.swift */; };
 		B984B34C2280B6F8004035F0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B984B34B2280B6F8004035F0 /* ViewController.swift */; };
 		B984B34F2280B6F8004035F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B984B34D2280B6F8004035F0 /* Main.storyboard */; };
@@ -19,6 +21,8 @@
 		1EBF88BDD45EB7CA6B21EE7A /* Pods-AOSwiftHelpersExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AOSwiftHelpersExample.debug.xcconfig"; path = "Target Support Files/Pods-AOSwiftHelpersExample/Pods-AOSwiftHelpersExample.debug.xcconfig"; sourceTree = "<group>"; };
 		5B670B63DBB78FF7A8FFEBFD /* Pods_AOSwiftHelpersExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AOSwiftHelpersExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5C1B84BE897D0051E88AEEE /* Pods-AOSwiftHelpersExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AOSwiftHelpersExample.release.xcconfig"; path = "Target Support Files/Pods-AOSwiftHelpersExample/Pods-AOSwiftHelpersExample.release.xcconfig"; sourceTree = "<group>"; };
+		B919E5852286C6E00056304D /* ViewsExampleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewsExampleController.swift; sourceTree = "<group>"; };
+		B97356DA228625220070D292 /* ViewControllerTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTableCell.swift; sourceTree = "<group>"; };
 		B984B3462280B6F8004035F0 /* AOSwiftHelpersExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AOSwiftHelpersExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B984B3492280B6F8004035F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B984B34B2280B6F8004035F0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -48,6 +52,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B919E5842286C6AA0056304D /* Examples */ = {
+			isa = PBXGroup;
+			children = (
+				B919E5872286C6E50056304D /* View */,
+			);
+			path = Examples;
+			sourceTree = "<group>";
+		};
+		B919E5872286C6E50056304D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B919E5852286C6E00056304D /* ViewsExampleController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		B984B33D2280B6F8004035F0 = {
 			isa = PBXGroup;
 			children = (
@@ -71,6 +91,8 @@
 			children = (
 				B984B3492280B6F8004035F0 /* AppDelegate.swift */,
 				B984B34B2280B6F8004035F0 /* ViewController.swift */,
+				B97356DA228625220070D292 /* ViewControllerTableCell.swift */,
+				B919E5842286C6AA0056304D /* Examples */,
 				B984B34D2280B6F8004035F0 /* Main.storyboard */,
 				B984B3502280B6F9004035F0 /* Assets.xcassets */,
 				B984B3522280B6F9004035F0 /* LaunchScreen.storyboard */,
@@ -209,6 +231,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B984B34C2280B6F8004035F0 /* ViewController.swift in Sources */,
+				B919E5862286C6E00056304D /* ViewsExampleController.swift in Sources */,
+				B97356DB228625220070D292 /* ViewControllerTableCell.swift in Sources */,
 				B984B34A2280B6F8004035F0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

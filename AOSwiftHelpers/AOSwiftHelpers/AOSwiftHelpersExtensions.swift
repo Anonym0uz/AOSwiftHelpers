@@ -74,6 +74,18 @@ public extension UIView {
     var safeArea: UILayoutGuide {
         return self.safeAreaLayoutGuide
     }
+    /**
+     Center X anchor isEqual centerXAnchor
+     */
+    var centerX: NSLayoutXAxisAnchor {
+        return self.centerXAnchor
+    }
+    /**
+     Center Y anchor isEqual centerYAnchor
+     */
+    var centerY: NSLayoutYAxisAnchor {
+        return self.centerYAnchor
+    }
     
     func fillSuperview() {
         setupAnchor(top: superview?.top, left: superview?.left, bottom: superview?.bottom, right: superview?.right)
@@ -110,6 +122,44 @@ public extension UIView {
         if size.height != 0 {
             heightAnchor.constraint(equalToConstant: size.height).isActive = true
         }
+    }
+    
+    func setupCenter(centerX: NSLayoutXAxisAnchor?, centerY: NSLayoutYAxisAnchor?, on view: UIView) {
+        translatesAutoresizingMaskIntoConstraints = false
+        if centerX != nil {
+            centerXAnchor.constraint(equalTo: view.centerX).isActive = true
+        }
+        if centerY != nil {
+            centerYAnchor.constraint(equalTo: view.centerY).isActive = true
+        }
+    }
+    
+    func updateConstraints(top: NSLayoutYAxisAnchor?, left: NSLayoutXAxisAnchor?, bottom: NSLayoutYAxisAnchor?, right: NSLayoutXAxisAnchor?, padding: UIEdgeInsets = .zero, size: CGSize = .zero) {
+        if let top = top {
+            topAnchor.constraint(equalTo: top, constant: padding.top).isActive = false
+        }
+        
+        if let left = left {
+            leadingAnchor.constraint(equalTo: left, constant: padding.left).isActive = false
+        }
+        
+        if let bottom = bottom {
+            bottomAnchor.constraint(equalTo: bottom, constant: -padding.bottom).isActive = false
+        }
+        
+        if let right = right {
+            trailingAnchor.constraint(equalTo: right, constant: -padding.right).isActive = false
+        }
+        
+        if size.width != 0 {
+            widthAnchor.constraint(equalToConstant: size.width).isActive = false
+        }
+        
+        if size.height != 0 {
+            heightAnchor.constraint(equalToConstant: size.height).isActive = false
+        }
+        
+        self.setupAnchor(top: top, left: left, bottom: bottom, right: right, padding: padding, size: size)
     }
     
     func setupConstraints() {

@@ -8,12 +8,15 @@
 
 import UIKit
 
-open class AOSwiftLogger: NSObject {
+public class AOSwiftLogger: NSObject {
+    
+    public static let logger = AOSwiftLogger()
 
     private var isDebugBuild: Bool!
     
-    public override init() {
+    internal override init() {
         self.isDebugBuild = false
+        super.init()
     }
     
     /**
@@ -32,7 +35,11 @@ open class AOSwiftLogger: NSObject {
      
      - Parameter str:   String parameter for logger.
      */
-    public func AOLog<T>(_ object: T, _ file: String = #file, function: String = #function, line: Int = #line, trace: [String] = Thread.callStackSymbols) {
+    public func AOLog<T>(_ object: T,
+                         _ file: String = #file,
+                         function: String = #function,
+                         line: Int = #line,
+                         trace: [String] = Thread.callStackSymbols) {
         
         if self.isDebugBuild {
             let fileString: NSString = NSString(string: file)
@@ -47,7 +54,11 @@ open class AOSwiftLogger: NSObject {
         }
     }
     
-    internal func AOInternalLog<T>(_ object: T, _ file: String = #file, function: String = #function, line: Int = #line, trace: [String] = Thread.callStackSymbols) {
+    internal func AOInternalLog<T>(_ object: T,
+                                   _ file: String = #file,
+                                   function: String = #function,
+                                   line: Int = #line,
+                                   trace: [String] = Thread.callStackSymbols) {
         let fileString: NSString = NSString(string: file)
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss:SSS"

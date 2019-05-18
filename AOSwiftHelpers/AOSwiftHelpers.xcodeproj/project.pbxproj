@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B984B32922809DCB004035F0 /* AOSwiftHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = B984B32722809DCB004035F0 /* AOSwiftHelpers.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B95F30AC2281B2AD00CD5CB5 /* AOSwiftHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = B984B32722809DCB004035F0 /* AOSwiftHelpers.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B984B33122809E05004035F0 /* AOSwiftHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B984B32F22809E05004035F0 /* AOSwiftHelpers.swift */; };
 		B984B33222809E05004035F0 /* AOSwiftHelpersExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B984B33022809E05004035F0 /* AOSwiftHelpersExtensions.swift */; };
 		B984B33722809E1D004035F0 /* AOSwiftLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B984B33422809E1D004035F0 /* AOSwiftLogger.swift */; };
 		B984B33822809E1D004035F0 /* AOSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B984B33622809E1D004035F0 /* AOSwiftUI.swift */; };
-		B984B3392280B03B004035F0 /* AOSwiftHelpers.swift in Headers */ = {isa = PBXBuildFile; fileRef = B984B32F22809E05004035F0 /* AOSwiftHelpers.swift */; };
+		B984B3392280B03B004035F0 /* AOSwiftHelpers.swift in Headers */ = {isa = PBXBuildFile; fileRef = B984B32F22809E05004035F0 /* AOSwiftHelpers.swift */; settings = {ATTRIBUTES = (Private, ); }; };
 		B984B33A2280B03D004035F0 /* AOSwiftHelpersExtensions.swift in Headers */ = {isa = PBXBuildFile; fileRef = B984B33022809E05004035F0 /* AOSwiftHelpersExtensions.swift */; };
 		B984B33B2280B03F004035F0 /* AOSwiftLogger.swift in Headers */ = {isa = PBXBuildFile; fileRef = B984B33422809E1D004035F0 /* AOSwiftLogger.swift */; settings = {ATTRIBUTES = (Private, ); }; };
 		B984B33C2280B042004035F0 /* AOSwiftUI.swift in Headers */ = {isa = PBXBuildFile; fileRef = B984B33622809E1D004035F0 /* AOSwiftUI.swift */; settings = {ATTRIBUTES = (Private, ); }; };
@@ -91,10 +91,10 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B984B32922809DCB004035F0 /* AOSwiftHelpers.h in Headers */,
-				B984B33B2280B03F004035F0 /* AOSwiftLogger.swift in Headers */,
-				B984B33C2280B042004035F0 /* AOSwiftUI.swift in Headers */,
+				B95F30AC2281B2AD00CD5CB5 /* AOSwiftHelpers.h in Headers */,
 				B984B3392280B03B004035F0 /* AOSwiftHelpers.swift in Headers */,
+				B984B33C2280B042004035F0 /* AOSwiftUI.swift in Headers */,
+				B984B33B2280B03F004035F0 /* AOSwiftLogger.swift in Headers */,
 				B984B33A2280B03D004035F0 /* AOSwiftHelpersExtensions.swift in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

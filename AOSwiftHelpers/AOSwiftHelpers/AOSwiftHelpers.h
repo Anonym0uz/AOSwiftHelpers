@@ -9,10 +9,10 @@
 #import <UIKit/UIKit.h>
 
 //! Project version number for AOSwiftHelpers.
-FOUNDATION_EXPORT double AOSwiftHelpersVersionNumber;
+//FOUNDATION_EXPORT double AOSwiftHelpersVersionNumber;
 
 //! Project version string for AOSwiftHelpers.
-FOUNDATION_EXPORT const unsigned char AOSwiftHelpersVersionString[];
+//FOUNDATION_EXPORT const unsigned char AOSwiftHelpersVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <AOSwiftHelpers/PublicHeader.h>
 
