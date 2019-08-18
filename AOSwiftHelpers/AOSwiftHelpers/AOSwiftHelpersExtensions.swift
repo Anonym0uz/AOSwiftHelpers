@@ -39,6 +39,51 @@ public extension UILayoutGuide {
 }
 
 public extension UIView {
+    
+    public class AOConstarints {
+        public var left: NSLayoutXAxisAnchor {
+            return UIView().left
+        }
+        
+        public var right: NSLayoutXAxisAnchor {
+            return UIView().right
+        }
+        
+        public var top: NSLayoutYAxisAnchor {
+            return UIView().top
+        }
+        
+        public var bottom: NSLayoutYAxisAnchor {
+            return UIView().bottom
+        }
+        
+        @available(iOS 11.0, *)
+        public var safeArea: UILayoutGuide {
+            return UIView().safeArea
+        }
+        
+        /**
+         Center X anchor isEqual centerXAnchor
+         */
+        public var centerX: NSLayoutXAxisAnchor {
+            return UIView().centerX
+        }
+        /**
+         Center Y anchor isEqual centerYAnchor
+         */
+        public var centerY: NSLayoutYAxisAnchor {
+            return UIView().centerY
+        }
+        
+        public var width: NSLayoutDimension {
+            return UIView().width
+        }
+        
+        public var height: NSLayoutDimension {
+            return UIView().height
+        }
+    }
+    
     /**
      Left anchor isEqual leadingAnchor
      */
@@ -87,7 +132,16 @@ public extension UIView {
         return self.centerYAnchor
     }
     
+    var width: NSLayoutDimension {
+        return self.widthAnchor
+    }
+    
+    var height: NSLayoutDimension {
+        return self.heightAnchor
+    }
+    
     func fillSuperview() {
+        self.removeAllConstraints()
         setupAnchor(top: superview?.top, left: superview?.left, bottom: superview?.bottom, right: superview?.right)
     }
     
@@ -96,9 +150,14 @@ public extension UIView {
         heightAnchor.constraint(equalTo: view.heightAnchor).isActive = true
     }
     
+    func setViewSize(size: CGSize = .zero) {
+        widthAnchor.constraint(equalToConstant: size.width).isActive = true
+        heightAnchor.constraint(equalToConstant: size.height).isActive = true
+    }
+    
     func setupAnchor(top: NSLayoutYAxisAnchor?, left: NSLayoutXAxisAnchor?, bottom: NSLayoutYAxisAnchor?, right: NSLayoutXAxisAnchor?, padding: UIEdgeInsets = .zero, size: CGSize = .zero) {
         translatesAutoresizingMaskIntoConstraints = false
-        
+        self.removeAllConstraints()
         if let top = top {
             topAnchor.constraint(equalTo: top, constant: padding.top).isActive = true
         }
@@ -126,6 +185,7 @@ public extension UIView {
     
     func setupCenter(centerX: NSLayoutXAxisAnchor?, centerY: NSLayoutYAxisAnchor?, on view: UIView) {
         translatesAutoresizingMaskIntoConstraints = false
+//        self.removeAllConstraints()
         if centerX != nil {
             centerXAnchor.constraint(equalTo: view.centerX).isActive = true
         }
@@ -135,35 +195,28 @@ public extension UIView {
     }
     
     func updateConstraints(top: NSLayoutYAxisAnchor?, left: NSLayoutXAxisAnchor?, bottom: NSLayoutYAxisAnchor?, right: NSLayoutXAxisAnchor?, padding: UIEdgeInsets = .zero, size: CGSize = .zero) {
-        if let top = top {
-            topAnchor.constraint(equalTo: top, constant: padding.top).isActive = false
-        }
-        
-        if let left = left {
-            leadingAnchor.constraint(equalTo: left, constant: padding.left).isActive = false
-        }
-        
-        if let bottom = bottom {
-            bottomAnchor.constraint(equalTo: bottom, constant: -padding.bottom).isActive = false
-        }
-        
-        if let right = right {
-            trailingAnchor.constraint(equalTo: right, constant: -padding.right).isActive = false
-        }
-        
-        if size.width != 0 {
-            widthAnchor.constraint(equalToConstant: size.width).isActive = false
-        }
-        
-        if size.height != 0 {
-            heightAnchor.constraint(equalToConstant: size.height).isActive = false
-        }
+        let constraints = self.superview?.constraints.filter{
+            $0.firstItem as? UIView == self || $0.secondItem as? UIView == self
+            } ?? []
+
+        self.superview?.removeConstraints(constraints)
+        self.removeConstraints(self.constraints)
         
         self.setupAnchor(top: top, left: left, bottom: bottom, right: right, padding: padding, size: size)
     }
     
-    func setupConstraints() {
+    func setupConstraints(_ closure: (_ constraints: AOConstarints) -> Void) {
+        translatesAutoresizingMaskIntoConstraints = false
+        constraints.forEach { ($0 as NSLayoutConstraint).isActive = true }
+    }
+    
+    func removeAllConstraints() {
+        let constraints = self.superview?.constraints.filter{
+            $0.firstItem as? UIView == self || $0.secondItem as? UIView == self
+            } ?? []
         
+        self.superview?.removeConstraints(constraints)
+        self.removeConstraints(self.constraints)
     }
     
     /**
